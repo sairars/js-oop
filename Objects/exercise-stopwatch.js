@@ -4,13 +4,13 @@ class StopWatch {
     let duration = 0;
 
     this.start = function () {
-      if (isStarted) throw new Error("Stopwatch has already started.");
+      if (isRunning) throw new Error('Stopwatch has already started.');
       isRunning = true;
       startTime = Date.now();
     };
 
     this.stop = function () {
-      if (!isRunning) throw new Error("Stopwatch is not started.");
+      if (!isRunning) throw new Error('Stopwatch is not started.');
       isRunning = false;
       stopTime = Date.now();
 
@@ -24,9 +24,9 @@ class StopWatch {
       duration = 0;
     };
 
-    Object.defineProperty(this, "duration", {
+    Object.defineProperty(this, 'duration', {
       get: function () {
-        return isRunning ? "Stop watch running" : duration; //duration in seconds
+        return isRunning ? 'Stop watch running' : duration; //duration in seconds
       },
     });
   }
